@@ -1,314 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-.desktop {
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-}
-
-.desktop .div {
-  background-color: #ffffff;
-  border: 1px none;
-  height: 1024px;
-  position: relative;
-  width: 1440px;
-}
-
-.desktop .drag-n-drop {
-  height: 662px;
-  left: 94px;
-  position: absolute;
-  top: 101px;
-  width: 464px;
-}
-
-.desktop .overlap {
-  border: 1px dashed;
-  border-color: #000000;
-  border-radius: 20px;
-  height: 662px;
-  position: relative;
-  width: 460px;
-}
-
-.desktop .group {
-  height: 96px;
-  left: 169px;
-  position: absolute;
-  top: 157px;
-  width: 120px;
-}
-
-.desktop .text-wrapper {
-  color: #000000;
-  font-family: "Inter-Regular", Helvetica;
-  font-size: 24px;
-  font-weight: 400;
-  left: 135px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 269px;
-  width: 187px;
-}
-
-.desktop .text-wrapper-2 {
-  color: #000000;
-  font-family: "Inter-Regular", Helvetica;
-  font-size: 24px;
-  font-weight: 400;
-  left: 212px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 375px;
-}
-
-.desktop .overlap-group-wrapper {
-  height: 48px;
-  left: 139px;
-  position: absolute;
-  top: 452px;
-  width: 182px;
-}
-
-.desktop .overlap-group {
-  background-color: #ffb859;
-  border-radius: 10px;
-  box-shadow: 0px 4px 4px #cc7400;
-  height: 50px;
-  left: -1px;
-  position: relative;
-  top: -1px;
-}
-
-.desktop .text-wrapper-3 {
-  color: #000000;
-  font-family: "Inter-Medium", Helvetica;
-  font-size: 20px;
-  font-weight: 500;
-  left: 54px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 13px;
-  white-space: nowrap;
-}
-
-.desktop .element {
-  height: 110px;
-  left: 613px;
-  position: absolute;
-  top: 490px;
-  width: 706px;
-}
-
-.desktop .overlap-2 {
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: #c4c4c4;
-  border-radius: 10px;
-  box-shadow: 0px 2px 4px #c4c4c480;
-  height: 110px;
-  position: relative;
-  width: 700px;
-}
-
-.desktop .text-wrapper-4 {
-  color: #000000;
-  font-family: "Inter-Regular", Helvetica;
-  font-size: 20px;
-  font-weight: 400;
-  left: 30px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 20px;
-  white-space: nowrap;
-}
-
-.desktop .text-wrapper-5 {
-  color: #8c8c8c;
-  font-family: "Inter-Regular", Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  left: 30px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 68px;
-  white-space: nowrap;
-}
-
-.desktop .text-wrapper-6 {
-  color: #8c8c8c;
-  font-family: "Inter-Regular", Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  left: 626px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 68px;
-  white-space: nowrap;
-}
-
-.desktop .rectangle-wrapper {
-  background-color: #c4c4c4;
-  border-radius: 20px;
-  height: 8px;
-  left: 31px;
-  position: absolute;
-  top: 53px;
-  width: 637px;
-}
-
-.desktop .rectangle {
-  background-color: #ff8906;
-  border-radius: 20px;
-  height: 8px;
-}
-
-.desktop .img {
-  height: 24px;
-  left: 643px;
-  position: absolute;
-  top: 20px;
-  width: 24px;
-}
-
-.desktop .overlap-wrapper {
-  height: 110px;
-  left: 613px;
-  position: absolute;
-  top: 619px;
-  width: 706px;
-}
-
-.desktop .text-wrapper-7 {
-  color: #8c8c8c;
-  font-family: "Inter-Regular", Helvetica;
-  font-size: 16px;
-  font-weight: 400;
-  left: 634px;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
-  top: 68px;
-  white-space: nowrap;
-}
-
-.desktop .rectangle-2 {
-  background-color: #ff8906;
-  border-radius: 20px;
-  height: 8px;
-  width: 400px;
-}
-
-.desktop .component-lottie {
-  height: 435px;
-  left: 780px;
-  object-fit: cover;
-  position: absolute;
-  top: 36px;
-  width: 435px;
-}
-
-.desktop .overlap-3 {
-  height: 241px;
-  left: 1329px;
-  position: absolute;
-  top: 488px;
-  width: 16px;
-}
-
-.desktop .rectangle-3 {
-  background-color: #e7e7e7;
-  height: 239px;
-  left: 3px;
-  position: absolute;
-  top: 2px;
-  width: 10px;
-}
-
-.desktop .rectangle-4 {
-  background-color: #c4c4c4;
-  border-radius: 20px;
-  height: 50px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 16px;
-}
-</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Augzilla</title>
-</head>
-<body>
-        <div class="header">
-             <h1>Augzilla</h1>
-        <img src="/static/dinologo_t.png" height="50" width="50" alt="logo">
-        </div>
-        <div>
-            <p>AUGMENT DATASETS INSTANTLY FOR FREE</p>
-        </div>
-          <div className="desktop">
-      <div className="div">
-        <div className="drag-n-drop">
-          <div className="overlap">
-            <img className="group" alt="Group" src="/static/fa-solid_cloud-upload-alt.svg" />
-            <h1 className="text-wrapper">Drag and drop files to upload</h1>
-            <div className="text-wrapper-2">OR</div>
-            <div className="overlap-group-wrapper">
-              <div className="overlap-group">
-                <div className="text-wrapper-3">Browse</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="element">
-          <div className="overlap-2">
-            <div className="text-wrapper-4">image.jpg</div>
-            <div className="text-wrapper-5">10 MB</div>
-            <div className="text-wrapper-6">100%</div>
-            <div className="rectangle-wrapper">
-              <div className="rectangle">
-            </div>
-            <img className="img" alt="Group" src="/static/ep_success-filled.svg" />
-          </div>
-        </div>
-        <div className="overlap-wrapper">
-          <div className="overlap-2">
-            <div className="text-wrapper-4">myresume.pdf</div>
-            <div className="text-wrapper-5">2 MB</div>
-            <div className="text-wrapper-7">65%</div>
-            <div className="rectangle-wrapper">
-              <div className="rectangle-2">
-            </div>
-            <img className="img" alt="Group" src="/static/fa-solid_cloud-upload-alt.svg" />
-          </div>
-        </div>
-        <img className="component-lottie" alt="Component lottie" src="/static/lottie.gif" />
-        <div className="overlap-3">
-          <div className="rectangle-3">
-          <div className="rectangle-4">
-        </div>
-      </div>
-    </div>
+    <style>
+        /* General styles */
+        body {
+            font-family: "Inter-Regular", Helvetica;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Header styles */
+        .header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .header .logo{
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: center;
+        }
+        /* .header img{
+            height: auto;
+            width: 100px;
+        } */
+        
+        /* Desktop styles */
+        .desktop {
+            background-image: url("/static/augworld.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .desktop-container {
+            width: 100%;
+            max-width: 1440px;
+            height: 1024px;
+            position: relative;
+        }
+        
+        .drag-n-drop {
+            height: 662px;
+            width: 464px;
+            position: absolute;
+            top: 101px;
+            left: 94px;
+            /* background-color: #ffffff; */
+            border: 1px dashed #000000;
+            border-radius: 20px;
+        }
+        .drag-n-drop:hover{
+            background-color:#ffffff
+        }
 
         
-
+        .group {
+            height: 96px;
+            width: 120px;
+            position: absolute;
+            top: 157px;
+            left: 169px;
+        }
+        
+        .text-wrapper {
+            color: #000000;
+            font-size: 24px;
+            font-weight: 400;
+            position: absolute;
+            top: 269px;
+            left: 135px;
+            width: 187px;
+            text-align: center;
+        }
+        
+        .text-wrapper-2 {
+            color: #000000;
+            font-size: 24px;
+            font-weight: 400;
+            position: absolute;
+            top: 375px;
+            left: 212px;
+        }
+        
+        .overlap-group-wrapper {
+            height: 48px;
+            width: 182px;
+            position: absolute;
+            top: 452px;
+            left: 139px;
+        }
+        
+        .overlap-group {
+            background-color: #ffb859;
+            border-radius: 10px;
+            box-shadow: 0px 4px 4px #cc7400;
+            height: 50px;
+            position: relative;
+            top: -1px;
+            left: -1px;
+        }
+        
+        .text-wrapper-3 {
+            color: #000000;
+            font-size: 20px;
+            font-weight: 500;
+            position: absolute;
+            top: 13px;
+            left: 54px;
+            white-space: nowrap;
+        }
+        
+        .element {
+            height: 110px;
+            width: 706px;
+            position: absolute;
+            top: 490px;
+            left: 613px;
+        }
+        
+        .overlap-2 {
+            background-color: #ffffff;
+            border: 1px solid #c4c4c4;
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px #c4c4c480;
+            height: 110px;
+            position: relative;
+            width: 700px;
+        }
+        
+        .text-wrapper-4 {
+            color: #000000;
+            font-size: 20px;
+            font-weight: 400;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            white-space: nowrap;
+        }
+        
+        .text-wrapper-5 {
+            color: #8c8c8c;
+            font-size: 16px;
+            font-weight: 400;
+            position: absolute;
+            top: 68px;
+            left: 30px;
+            white-space: nowrap;
+        }
+        
+        .text-wrapper-6 {
+            color: #8c8c8c;
+            font-size: 16px;
+            font-weight: 400;
+            position: absolute;
+            top: 68px;
+            left: 626px;
+            white-space: nowrap;
+        }
+        
+        .rectangle-wrapper {
+            background-color: #c4c4c4;
+            border-radius: 20px;
+            height: 8px;
+            position: absolute;
+            top: 53px;
+            left: 31px;
+            width: 637px;
+        }
+        
+        .rectangle {
+            background-color: #ff8906;
+            border-radius: 20px;
+            height: 8px;
+        }
+        
+        .img {
+            height: 24px;
+            width: 24px;
+            position: absolute;
+            top: 20px;
+            left: 643px;
+        }
+        
+        .overlap-wrapper {
+            height: 110px;
+            width: 706px;
+            position: absolute;
+            top: 619px;
+            left: 613px;
+        }
+        
+        .text-wrapper-7 {
+            color: #8c8c8c;
+            font-size: 16px;
+            font-weight: 400;
+            position: absolute;
+            top: 68px;
+            left: 634px;
+            white-space: nowrap;
+        }
+        
+        .rectangle-2 {
+            background-color: #ff8906;
+            border-radius: 20px;
+            height: 8px;
+            width: 400px;
+        }
+        
+        .component-lottie {
+            height: 435px;
+            width: 435px;
+            position: absolute;
+            top: 36px;
+            left: 780px;
+            object-fit: cover;
+        }
+        
+        .overlap-3 {
+            height: 241px;
+            width: 16px;
+            position: absolute;
+            top: 488px;
+            left: 1329px;
+        }
+        
+        .rectangle-3 {
+            background-color: #e7e7e7;
+            height: 239px;
+            width: 10px;
+            position: absolute;
+            top: 2px;
+            left: 3px;
+        }
+        
+        .rectangle-4 {
+            background-color: #c4c4c4;
+            border-radius: 20px;
+            height: 50px;
+            width: 16px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="/static/logo-color.svg" alt="logo">
+        </div>
+    </div>
+    <div class="desktop">
+        <div class="desktop-container">
+            <div class="drag-n-drop">
+                <div class="overlap">
+                    <img class="group" alt="Group" src="/static/fa-solid_cloud-upload-alt.svg" />
+                    <h1 class="text-wrapper">Drag and drop files to upload</h1>
+                    <div class="text-wrapper-2">OR</div>
+                    <div class="overlap-group-wrapper">
+                        <div class="overlap-group">
+                            <div class="text-wrapper-3">Browse</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="element">
+                <div class="overlap-2">
+                    <div class="text-wrapper-4">image.jpg</div>
+                    <div class="text-wrapper-5">10 MB</div>
+                    <div class="text-wrapper-6">100%</div>
+                    <div class="rectangle-wrapper">
+                        <div class="rectangle"></div>
+                    </div>
+                    <img class="img" alt="Group" src="/static/ep_success-filled.svg" />
+                </div>
+            </div>
+            <div class="overlap-wrapper">
+                <div class="overlap-2">
+                    <div class="text-wrapper-4">myresume.pdf</div>
+                    <div class="text-wrapper-5">2 MB</div>
+                    <div class="text-wrapper-7">65%</div>
+                    <div class="rectangle-wrapper">
+                        <div class="rectangle-2"></div>
+                    </div>
+                    <img class="img" alt="Group" src="/static/charm_circle-cross.svg" />
+                </div>
+            </div>
+            <img class="component-lottie" alt="Component lottie" src="/static/lottie.gif" />
+            <div class="overlap-3">
+                <div class="rectangle-3">
+                    <div class="rectangle-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
