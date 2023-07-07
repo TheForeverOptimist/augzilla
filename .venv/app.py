@@ -1,11 +1,11 @@
-from flask import Flask, render_template
+from flask import Flask
+from views import *
 
 app = Flask(__name__)
 
-@app.route('/')
-def homepage():
-    return render_template('home.html')
+# Routes
+app.add_url_rule('/', view_func=homepage)
+app.add_url_rule('/begin', view_func=begin)
 
-@app.route('/begin')
-def begin():
-    return render_template('begin.html')
+if __name__ == '__main__':
+    app.run()
