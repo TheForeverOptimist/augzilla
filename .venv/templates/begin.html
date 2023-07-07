@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Augzilla</title>
+    <style>
+        .desktop {
+        background-image: url("/static/augworld.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .desktop-container {
+        width: 100%;
+        max-width: 1440px;
+        height: 1024px;
+        position: relative;
+      }
+
+      .drag-n-drop {
+        height: 662px;
+        width: 464px;
+        position: absolute;
+        top: 101px;
+        left: 94px;
+        /* background-color: #ffffff; */
+        border: 1px dashed #000000;
+        border-radius: 20px;
+      }
+      .drag-n-drop:hover {
+        background-color: #ffffff;
+      }
+    </style>
+</head>
+<body>
+        <div class="desktop">
+            <div class="desktop-container">
+                <div class="drag-n-drop">
+                    <div class="overlap">
+                            <img class="group" alt="Group" src="/static/fa-solid_cloud-upload-alt.svg" />
+                            <h1 class="text-wrapper">Drag and drop files to upload</h1>
+                            <div class="text-wrapper-2">OR</div>
+                            <div class="overlap-group-wrapper">
+                            <div class="overlap-group">
+                            <div class="text-wrapper-3">Browse</div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</body>
+</html>
