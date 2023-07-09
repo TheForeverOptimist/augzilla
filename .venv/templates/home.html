@@ -10,23 +10,45 @@
         font-family: "Inter-Regular", Helvetica;
         margin: 0;
         padding: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       /* Header styles */
       .header {
         display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-      }
+        align-items: center;
+        justify-content: center;
+        }
+
 
       .header .logo {
-        display: flex;
         align-items: center;
-        flex-grow: 1;
         justify-content: center;
       }
 
-      .scroll_down{
+        .begin_button{
+            position: absolute;
+            color: #ffffff;
+            top: calc(50% + 12rem);
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #e5331c;
+            text-decoration: none;
+            border-radius: 20px;
+            border: none;
+            transition: background-color 0.3s ease;
+            outline: none;
+
+        }
+        .begin_button:hover{
+            background-color:#8b1e10;
+        }
+
+      /* .scroll_down{
             position: absolute;
             right: 6rem;
             bottom: 6rem;
@@ -36,15 +58,10 @@
             color: #e5331c;
             text-decoration: none;
         } */
-      .header img{
-            height: auto;
-            width: 100px;
-        } */
-
       /* Desktop styles */
       
 
-      .group {
+      /* .group {
             height: 96px;
             width: 120px;
             position: absolute;
@@ -162,17 +179,9 @@
             background-color: #ff8906;
             border-radius: 20px;
             height: 8px;
-        }
+        } */
         
-        .img {
-            height: 24px;
-            width: 24px;
-            position: absolute;
-            top: 20px;
-            left: 643px;
-        }
-        
-        .overlap-wrapper {
+        /* .overlap-wrapper {
             height: 110px;
             width: 706px;
             position: absolute;
@@ -195,9 +204,9 @@
             border-radius: 20px;
             height: 8px;
             width: 400px;
-        }
-        
-        .component-lottie {
+        } */
+    
+        /* .component-lottie {
             height: 435px;
             width: 435px;
             position: absolute;
@@ -212,18 +221,18 @@
             position: absolute;
             top: 488px;
             left: 1329px;
-        }
+        } */
         
-        .rectangle-3 {
+        /* .rectangle-3 {
             background-color: #e7e7e7;
             height: 239px;
             width: 10px;
             position: absolute;
             top: 2px;
             left: 3px;
-        }
+        } */
         
-        .rectangle-4 {
+        /* .rectangle-4 {
             background-color: #c4c4c4;
             border-radius: 20px;
             height: 50px;
@@ -231,7 +240,10 @@
             position: absolute;
             top: 0;
             left: 0;
-        }
+        } */
+
+
+
     </style>
   </head>
   <body>
@@ -239,8 +251,7 @@
       <div class="logo">
         <img src="/static/logo-color.svg" alt="logo" />
       </div>
-      <div class="begin_button">
-        <button onclick="location.href='begin.html'">Let's Begin</button>
+        <a href="begin.html" class="begin_button">Let's Augment Some Data!</a>
       </div>
     </div>
     <!-- <div class="element">

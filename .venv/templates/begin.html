@@ -5,14 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Augzilla</title>
     <style>
+
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
         .desktop {
-        background-image: url("/static/augworld.png");
+        background-image: url("/static/dinotrex.png");
         background-size: cover;
         background-repeat: no-repeat;
+        background-position: center center;
         display: flex;
         flex-direction: row;
         justify-content: center;
         padding: 20px;
+        position: relative;
       }
 
       .desktop-container {
@@ -22,12 +30,62 @@
         position: relative;
       }
 
+      .panel {
+        height: 400px;
+        width: 300px;
+        background-color: rgb(124, 174, 169);
+        border: 2px whitesmoke solid;
+        border-radius: 2rem;
+        box-shadow: 0 0 75px rgba(255, 165, 0, 0.75);
+        position: absolute;
+        top: 20%;
+        left: 10%;
+      }
+
+      .instructions {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -97%);
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        line-height: 1.5;
+        text-align: left;
+        text-transform: uppercase;
+        background-color: rgba(253, 238, 211);
+        border: 2px orangered solid;
+        padding: 1rem;
+        border-radius: 20px;
+        
+      }
+
+      .instructions .highlight {
+        color: #ff9248;
+        font-weight: 700;
+      }
+
+      .new_text {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -2%);
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 600px;
+        letter-spacing: 2px;
+        line-height: 1.5;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
       .drag-n-drop {
         height: 662px;
         width: 464px;
         position: absolute;
-        top: 101px;
-        left: 94px;
+        top: 10%;
+        right: 10%;
         /* background-color: #ffffff; */
         border: 1px dashed #000000;
         border-radius: 20px;
@@ -35,51 +93,14 @@
       .drag-n-drop:hover {
         background-color: #ffffff;
       }
-            /* General styles */
-      body {
-        font-family: "Inter-Regular", Helvetica;
-        margin: 0;
-        padding: 0;
-      }
-
-      /* Header styles */
-      .header {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-      }
-
-      .header .logo {
-        display: flex;
-        align-items: center;
-        flex-grow: 1;
-        justify-content: center;
-      }
-
-      .scroll_down{
-            position: absolute;
-            right: 6rem;
-            bottom: 6rem;
-            transform: rotate(90deg);
-            font-weight: 300;
-            font-size: 0.9rem;
-            color: #e5331c;
-            text-decoration: none;
-        } */
-      .header img{
-            height: auto;
-            width: 100px;
-        } */
-
-      /* Desktop styles */
       
 
       .group {
             height: 96px;
             width: 120px;
-            position: absolute;
+            position: relative;
             top: 157px;
-            left: 169px;
+            left: 37%;
         }
         
         .text-wrapper {
@@ -130,15 +151,15 @@
             white-space: nowrap;
         }
         
-        .element {
+        /* .element {
             height: 110px;
             width: 706px;
             position: absolute;
             top: 490px;
             left: 613px;
-        }
+        } */
         
-        .overlap-2 {
+        /* .overlap-2 {
             background-color: #ffffff;
             border: 1px solid #c4c4c4;
             border-radius: 10px;
@@ -146,9 +167,9 @@
             height: 110px;
             position: relative;
             width: 700px;
-        }
+        } */
         
-        .text-wrapper-4 {
+        /* .text-wrapper-4 {
             color: #000000;
             font-size: 20px;
             font-weight: 400;
@@ -176,9 +197,9 @@
             top: 68px;
             left: 626px;
             white-space: nowrap;
-        }
+        } */
         
-        .rectangle-wrapper {
+        /* .rectangle-wrapper {
             background-color: #c4c4c4;
             border-radius: 20px;
             height: 8px;
@@ -192,25 +213,25 @@
             background-color: #ff8906;
             border-radius: 20px;
             height: 8px;
-        }
+        } */
         
-        .img {
+        /* .img {
             height: 24px;
             width: 24px;
             position: absolute;
             top: 20px;
             left: 643px;
-        }
+        } */
         
-        .overlap-wrapper {
+        /* .overlap-wrapper {
             height: 110px;
             width: 706px;
             position: absolute;
             top: 619px;
             left: 613px;
-        }
+        } */
         
-        .text-wrapper-7 {
+        /* .text-wrapper-7 {
             color: #8c8c8c;
             font-size: 16px;
             font-weight: 400;
@@ -218,33 +239,33 @@
             top: 68px;
             left: 634px;
             white-space: nowrap;
-        }
+        } */
         
-        .rectangle-2 {
+        /* .rectangle-2 {
             background-color: #ff8906;
             border-radius: 20px;
             height: 8px;
             width: 400px;
-        }
+        } */
         
-        .component-lottie {
+        /* .component-lottie {
             height: 435px;
             width: 435px;
             position: absolute;
             top: 36px;
             left: 780px;
             object-fit: cover;
-        }
+        } */
         
-        .overlap-3 {
+        /* .overlap-3 {
             height: 241px;
             width: 16px;
             position: absolute;
             top: 488px;
             left: 1329px;
-        }
+        } */
         
-        .rectangle-3 {
+        /* .rectangle-3 {
             background-color: #e7e7e7;
             height: 239px;
             width: 10px;
@@ -261,24 +282,28 @@
             position: absolute;
             top: 0;
             left: 0;
-        }
+        } */
     </style>
 </head>
 <body>
         <div class="desktop">
             <div class="desktop-container">
+                <div class="panel">
+                    <div class="instructions">Augment datasets <span class="highlight">instantly</span>  for free!</div>
+                    <div class="new_text"> Begin by <span class="shadow">uploading</span></div>
+                </div>
                 <div class="drag-n-drop">
                     <div class="overlap">
                             <img class="group" alt="Group" src="/static/fa-solid_cloud-upload-alt.svg" />
                             <h1 class="text-wrapper">Drag and drop files to upload</h1>
                             <div class="text-wrapper-2">OR</div>
                             <div class="overlap-group-wrapper">
-                            <div class="overlap-group">
-                            <div class="text-wrapper-3">Browse</div>
+                                <div class="overlap-group">
+                                    <div class="text-wrapper-3">Browse</div>
+                                </div>
                             </div>
                     </div>
                 </div>
-            </div>
         </div>
     
 </body>
