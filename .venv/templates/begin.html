@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Augzilla</title>
     <style>
-
       body {
         margin: 0;
         padding: 0;
         overflow: hidden;
       }
-        .desktop {
+      .desktop {
         background-image: url("/static/dinotrex.png");
         background-size: cover;
         background-repeat: no-repeat;
@@ -58,7 +57,6 @@
         border: 2px orangered solid;
         padding: 1rem;
         border-radius: 20px;
-        
       }
 
       .instructions .highlight {
@@ -91,75 +89,93 @@
         border-radius: 20px;
       }
       .drag-n-drop:hover {
-        background-color: #ffffff;
+        background-image: url(/static/baby_zilla.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
       }
-      
 
       .group {
-            height: 96px;
-            width: 120px;
-            position: relative;
-            top: 157px;
-            left: 37%;
-        }
-        
-        .text-wrapper {
-            color: #000000;
-            font-size: 24px;
-            font-weight: 400;
-            position: absolute;
-            top: 269px;
-            left: 135px;
-            width: 187px;
-            text-align: center;
-        }
-        
-        .text-wrapper-2 {
-            color: #000000;
-            font-size: 24px;
-            font-weight: 400;
-            position: absolute;
-            top: 375px;
-            left: 212px;
-        }
-        
-        .overlap-group-wrapper {
-            height: 48px;
-            width: 182px;
-            position: absolute;
-            top: 452px;
-            left: 139px;
-        }
-        
-        .overlap-group {
+        height: 96px;
+        width: 120px;
+        position: relative;
+        top: 157px;
+        left: 37%;
+      }
+
+      .text-wrapper {
+        color: #000000;
+        font-size: 22px;
+        font-weight: 400;
+        position: absolute;
+        background-color: antiquewhite;
+        border-radius: 20px;
+        top: 269px;
+        left: 135px;
+        width: 187px;
+        text-align: center;
+      }
+
+      .text-wrapper-2 {
+        color: #000000;
+        font-size: 24px;
+        font-weight: 700;
+        position: absolute;
+        top: 375px;
+        left: 212px;
+      }
+
+      .overlap-group-wrapper {
+        height: 48px;
+        width: 182px;
+        position: absolute;
+        top: 452px;
+        left: 139px;
+      }
+
+      /* .overlap-group {
+        border-radius: 10px;
+        box-shadow: 0px 4px 4px #cc7400;
+        height: 50px;
+        position: relative;
+        top: -1px;
+        left: -1px;
+      } */
+
+      .browse-button {
+        color: #000000;
+        font-size: 20px;
+        font-weight: 500;
+        position: absolute;
+        top: 13px;
+        left: 54px;
+        white-space: nowrap;
+      }
+
+      .actual_button {
             background-color: #ffb859;
+            padding: 10px 20px;
+            color: #fff;
+            cursor: pointer;
             border-radius: 10px;
             box-shadow: 0px 4px 4px #cc7400;
-            height: 50px;
             position: relative;
-            top: -1px;
-            left: -1px;
+            left: -10%;
         }
-        
-        .text-wrapper-3 {
-            color: #000000;
-            font-size: 20px;
-            font-weight: 500;
-            position: absolute;
-            top: 13px;
-            left: 54px;
-            white-space: nowrap;
+        .actual_button:hover {
+            background-color: #fff;
+            color: black;
         }
-        
-        /* .element {
+
+      /* .element {
             height: 110px;
             width: 706px;
             position: absolute;
             top: 490px;
             left: 613px;
         } */
-        
-        /* .overlap-2 {
+
+      /* .overlap-2 {
             background-color: #ffffff;
             border: 1px solid #c4c4c4;
             border-radius: 10px;
@@ -168,8 +184,8 @@
             position: relative;
             width: 700px;
         } */
-        
-        /* .text-wrapper-4 {
+
+      /* .text-wrapper-4 {
             color: #000000;
             font-size: 20px;
             font-weight: 400;
@@ -198,8 +214,8 @@
             left: 626px;
             white-space: nowrap;
         } */
-        
-        /* .rectangle-wrapper {
+
+      /* .rectangle-wrapper {
             background-color: #c4c4c4;
             border-radius: 20px;
             height: 8px;
@@ -214,24 +230,24 @@
             border-radius: 20px;
             height: 8px;
         } */
-        
-        /* .img {
+
+      /* .img {
             height: 24px;
             width: 24px;
             position: absolute;
             top: 20px;
             left: 643px;
         } */
-        
-        /* .overlap-wrapper {
+
+      /* .overlap-wrapper {
             height: 110px;
             width: 706px;
             position: absolute;
             top: 619px;
             left: 613px;
         } */
-        
-        /* .text-wrapper-7 {
+
+      /* .text-wrapper-7 {
             color: #8c8c8c;
             font-size: 16px;
             font-weight: 400;
@@ -240,15 +256,15 @@
             left: 634px;
             white-space: nowrap;
         } */
-        
-        /* .rectangle-2 {
+
+      /* .rectangle-2 {
             background-color: #ff8906;
             border-radius: 20px;
             height: 8px;
             width: 400px;
         } */
-        
-        /* .component-lottie {
+
+      /* .component-lottie {
             height: 435px;
             width: 435px;
             position: absolute;
@@ -256,16 +272,16 @@
             left: 780px;
             object-fit: cover;
         } */
-        
-        /* .overlap-3 {
+
+      /* .overlap-3 {
             height: 241px;
             width: 16px;
             position: absolute;
             top: 488px;
             left: 1329px;
         } */
-        
-        /* .rectangle-3 {
+
+      /* .rectangle-3 {
             background-color: #e7e7e7;
             height: 239px;
             width: 10px;
@@ -284,27 +300,35 @@
             left: 0;
         } */
     </style>
-</head>
-<body>
-        <div class="desktop">
-            <div class="desktop-container">
-                <div class="panel">
-                    <div class="instructions">Augment datasets <span class="highlight">instantly</span>  for free!</div>
-                    <div class="new_text"> Begin by <span class="shadow">uploading</span></div>
-                </div>
-                <div class="drag-n-drop">
-                    <div class="overlap">
-                            <img class="group" alt="Group" src="/static/fa-solid_cloud-upload-alt.svg" />
-                            <h1 class="text-wrapper">Drag and drop files to upload</h1>
-                            <div class="text-wrapper-2">OR</div>
-                            <div class="overlap-group-wrapper">
-                                <div class="overlap-group">
-                                    <div class="text-wrapper-3">Browse</div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
+  </head>
+  <body>
+    <div class="desktop">
+      <div class="desktop-container">
+        <div class="panel">
+          <div class="instructions">
+            Augment datasets <span class="highlight">instantly</span> for free!
+          </div>
+          <div class="new_text">
+            Begin by <span class="shadow">uploading</span>
+          </div>
         </div>
-    
-</body>
+        <div class="drag-n-drop">
+          <div class="overlap">
+            <img
+              class="group"
+              alt="Group"
+              src="/static/fa-solid_cloud-upload-alt.svg"
+            />
+            <h1 class="text-wrapper">Drag and drop files to upload</h1>
+            <div class="text-wrapper-2">OR</div>
+            <div class="overlap-group-wrapper">
+                <div class="browse-button">
+                    <input type="file" id="file-input" style="display: none;">
+                    <label for="file-input" class="actual_button">Browse</label>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
