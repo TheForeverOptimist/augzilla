@@ -20,7 +20,7 @@ def allowed_file(filename):
     return '.' in filename and \
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/upload', methods =['GET', 'POST'])
+@app.route('/begin', methods =['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         #check if the post request has the file part
@@ -35,12 +35,21 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('download_file', name=filename))
-        return
+            return redirect(url_for('augment', filename=filename))
+        return render_template('begin.html')
     
+
+@app.route('/augment/<filename>')
+def augment(filename):
+    return render_template('augment.html', filename=filename)
+
+
+
+
 @app.route('/uploads/<name>')
 def download_file(name):
     return send_from_directory(app.config["UPLOAD_FOLDER"], name)
+
 
 
 
