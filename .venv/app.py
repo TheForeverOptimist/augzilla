@@ -1,12 +1,14 @@
-import os
+import os, secrets
 from flask import Flask, flash, render_template, request, redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
+from datetime import datetime
 
 UPLOAD_FOLDER = os.path.join(os.getcwd(), 'uploads')
 ALLOWED_EXTENSIONS = {'png', 'jpeg', 'jpg', 'tiff', 'heic', 'webp'}
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.secret_key = secrets.token_hex(16)
 
 @app.route('/')
 def homepage():
@@ -34,14 +36,28 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('augment', filename=filename))
-        return render_template('begin.html')
+            #generating a unique filename using the original filename and a timestamp
+            timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+            unique_filename = f"{timestamp}_{filename}"
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'],unique_filename))
+            flash('File uploaded successfully', 'success')
+            return redirect(url_for('augment', filename=unique_filename, show_filename=True))
+        else:
+            flash ('Invalid file')
+            return redirect(request.url)
+    
+    return render_template('begin.html')
     
 
-@app.route('/augment/<filename>')
-def augment(filename):
-    return render_template('augment.html', filename=filename)
+@app.route('/augment/')
+def augment():
+    filename = request.args.get('filename')
+    if filename:
+        show_filename = f"Let's Augment {filename}"
+        return render_template('augment.html', show_filename=show_filename)
+    else:
+        flash('No filename found', 'error')
+        return redirect(url_for('begin'))
 
 
 

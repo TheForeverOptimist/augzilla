@@ -324,13 +324,24 @@
             <form action="/begin" method="POST" enctype="multipart/form-data">
               <div class="overlap-group-wrapper">
                 <div class="browse-button">
-                    <input type="file" id="file-input" style="display: none;" onchange="this.form.submit()">
+                    <input type="file" id="file-input" name="file" style="display: none;" onchange="this.form.submit()" multiple>
                     <label for="file-input" class="actual_button">Browse</label>
                 </div>
               </div>
             </form>
         </div>
       </div>
+    </div>
+        <div class="flash-messages">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class="flash-list">
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
     </div>
   </body>
 </html>

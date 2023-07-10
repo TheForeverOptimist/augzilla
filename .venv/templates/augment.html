@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Augzilla</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .main_page {
+            background-image: url(/static/zilla_land.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            height:100vh;
+        }
+
+        .billboard {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 800px;
+            width: 800px;
+            border: 2px white solid;
+            border-radius: 20px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main_page">
+        <div class="billboard">
+            <h1>{{ show_filename }}</h1>
+        </div>
+    </div>
+    
+</body>
+</html>
