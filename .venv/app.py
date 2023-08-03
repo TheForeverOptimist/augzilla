@@ -2,6 +2,11 @@ import os, secrets
 from flask import Flask, flash, render_template, request, redirect, url_for, send_from_directory
 from werkzeug.utils import secure_filename
 from datetime import datetime
+import imgaug.augmenters as iaa
+import cv2
+import os
+import glob
+
 
 UPLOAD_FOLDER = os.path.join(os.getcwd(), 'uploads')
 ALLOWED_EXTENSIONS = {'png', 'jpeg', 'jpg', 'tiff', 'heic', 'webp'}
@@ -60,11 +65,23 @@ def augment():
         return redirect(url_for('begin'))
 
 
+@app.route('/augment_images', methods=['POST'])
+def augment_images():
+    flip = 'flip' in request.form
+    affine = 'affine' in request.form
+    multiply = 'multiply' in request.form
+    blur = 'blur' in request.form
+    contrast = 'contrast' in request.form
 
+    #create the augmenter list.
+    augmenters = []
 
-@app.route('/uploads/<name>')
-def download_file(name):
-    return send_from_directory(app.config["UPLOAD_FOLDER"], name)
+    if flip:
+        augmenters.append(iaa.Fliplr(0.5))
+
+# @app.route('/uploads/<name>')
+# def download_file(name):
+#     return send_from_directory(app.config["UPLOAD_FOLDER"], name)
 
 
 

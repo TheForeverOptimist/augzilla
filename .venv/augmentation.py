@@ -2,8 +2,10 @@ import imgaug.augmenters as iaa
 import cv2
 import os
 import glob
+from flask import Flask, request
 
-
+def augment_images():
+    flip = 'flip' in request.form
 
 # 1.) Load Dataset
 images = []
@@ -18,8 +20,7 @@ augmentation = iaa.Sequential([
     #A. Rotate
     # iaa.Rotate((-30, 30))
     #B. Flip
-    iaa.Fliplr(0.5),
-    iaa.Flipud(0.5),
+    iaa.Fliplr(0.5), iaa.Flipud(0.5) if flip else None
 
     #C. Affine
     iaa.Affine(translate_percent={"x": (-0.5, 0.5), "y": (-0.5, 0.5)},
@@ -38,10 +39,6 @@ augmentation = iaa.Sequential([
         iaa.GaussianBlur((0.0, 3.0)),
                   
                   )
-
-
-    
-
 ])
 
 #3.) show images
